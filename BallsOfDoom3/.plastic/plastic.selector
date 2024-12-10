@@ -1,4 +1,0 @@
-repository "BallsOfDoom3@Sabugo_Studios@cloud"
-  path "/"
-    br "/main"
-    co "/main"

@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 5effc5d86e43f0a4a83081ffa2787813
+  productGUID: 900ac65edabaa61488302d698269e966
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: BallsOfDoom3
+  productName: BallsOfDoomNew
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -676,14 +676,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: BallsOfDoom3
+  metroPackageName: BallsOfDoomNew
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: BallsOfDoom3
+  metroApplicationDescription: BallsOfDoomNew
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -753,11 +753,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 347a6e7a-6bbf-4519-b3f2-0d37bd71a713
+  cloudProjectId: c5d56445-0db8-4902-84c0-bbe7b1a28e95
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: BallsOfDoom3
-  organizationId: unity_ih-pdub1c_fkxg
+  projectName: BallsOfDoomNew
+  organizationId: g4br4el
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
