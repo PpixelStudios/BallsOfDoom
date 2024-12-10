@@ -1,6 +1,7 @@
 # BallsOfDoom
 
-Introdução
+Introdução:
+
 O projeto consiste no desenvolvimento de um jogo de corrida, em que o objetivo principal é proporcionar aos jogadores uma experiência divertida e competitiva. Este jogo está a ser desenvolvido no âmbito da unidade curricular de Inteligência Artificial Aplicada a Jogos, aplicando conceitos de programação e interatividade.
 
 Conceito do Jogo
