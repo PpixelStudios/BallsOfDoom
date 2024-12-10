@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TranslucentCrystalv07Gamma
+  m_Name: TranslucentCrystalv07Gamma 1
   m_Shader: {fileID: 4800000, guid: 39fe729f5dcad0d41bc1d8df009668cb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission:
-        m_Texture: {fileID: 2800000, guid: c4cb56ed45fb93d428f0b362c9985f7c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: fbacd829ce7fbb14ea63d4c6afcc5f06, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -88,11 +88,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RampMask:
-        m_Texture: {fileID: 2800000, guid: c4cb56ed45fb93d428f0b362c9985f7c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fd39161d2c1b304083bc22f562fe5da, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMask:
-        m_Texture: {fileID: 2800000, guid: db56133bdb0993a40b90a1241d093e13, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -109,7 +109,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0.25
+    - _Metallic: 0.18
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -121,9 +121,9 @@ Material:
     - _SrcBlend: 1
     - _TransAmbient: 1
     - _TransDirect: 1
-    - _TransNormalDistortion: 0.1
-    - _TransScattering: 10
-    - _TransShadow: 0.9
+    - _TransNormalDistortion: 0.192
+    - _TransScattering: 8.7
+    - _TransShadow: 0.805
     - _Translucency: 50
     - _TranslucencyMaskPower: 1
     - _UVSec: 0
@@ -132,7 +132,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorTint: {r: 1, g: 0.13333334, b: 0.13333334, a: 1}
-    - _ColorTint1: {r: 0, g: 0, b: 0, a: 1}
-    - _ColorTint2: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorTint1: {r: 0, g: 0, b: 0, a: 0.56078434}
+    - _ColorTint2: {r: 0, g: 0, b: 0, a: 0.47843137}
     - _EmissionColor: {r: 1, g: 0.3970588, b: 0.53427994, a: 1}
   m_BuildTextureStacks: []
