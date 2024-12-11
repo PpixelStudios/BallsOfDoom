@@ -2,22 +2,47 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player; // Referência ao jogador
-    public Vector3 offset;   // Distância entre a câmera e o jogador
+    public Transform player; // Referência ao jogador (bola)
+    public Vector3 offset = new Vector3(0, 2, -5);   // Distância entre a câmera e a bola
     public float smoothSpeed = 0.125f; // Velocidade do movimento suave
+    public float rotationSpeed = 100f; // Velocidade de rotação da câmera
+    public KeyCode lookBackKey = KeyCode.LeftShift; // Tecla para olhar para trás
+
+    private bool isLookingBack = false; // Estado da câmera (normal ou olhando para trás)
+    private float currentRotationY = 0f; // Armazena a rotação em Y (horizontal)
+    private float currentRotationX = 0f; // Armazena a rotação em X (vertical), limitada para evitar que a câmera gire muito para cima ou para baixo
 
     void LateUpdate()
     {
-        // Posição desejada da câmera
-        Vector3 desiredPosition = player.position + offset;
+        // Verifica se a tecla para olhar para trás está pressionada
+        isLookingBack = Input.GetKey(lookBackKey);
 
-        // Interpolação suave para um movimento mais natural
+        // Calcula o offset desejado baseado no estado atual (normal ou olhando para trás)
+        Vector3 desiredOffset = isLookingBack ? new Vector3(0, 1, 5) : offset; // Ajuste de altura ao olhar para trás
+
+        // Permite a rotação horizontal com o movimento do mouse (ou outra entrada)
+        if (!isLookingBack)
+        {
+            currentRotationY += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime * 2; // Rotação horizontal
+            currentRotationX -= Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime; // Rotação vertical
+
+            // Limita a rotação vertical para evitar que a câmera vire muito para cima ou para baixo
+            currentRotationX = Mathf.Clamp(currentRotationX, -30f, 60f);
+        }
+
+        // Calcula a rotação da câmera com base na rotação em Y
+        Quaternion rotation = Quaternion.Euler(currentRotationX, currentRotationY, 0);
+
+        // Calcula a posição desejada da câmera (sempre atrás da bola, mas com rotação horizontal)
+        Vector3 desiredPosition = player.position + rotation * desiredOffset;
+
+        // Suaviza o movimento da câmera
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        // Atualizar a posição da câmera
+        // Atualiza a posição da câmera
         transform.position = smoothedPosition;
 
-        // Manter a câmera olhando para o jogador (opcional)
+        // A câmera sempre olha para a bola
         transform.LookAt(player);
     }
 }
@@ -69,4 +94,5 @@ public class CameraOrbit : MonoBehaviour
             }
         }
     }
-}*/
+}
+*/
