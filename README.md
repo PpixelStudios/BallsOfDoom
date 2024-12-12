@@ -4,9 +4,6 @@ Introdução:
 
   O projeto consiste no desenvolvimento de um jogo de corrida, em que o objetivo principal é proporcionar aos jogadores uma experiência divertida e competitiva. Este jogo está a ser desenvolvido no âmbito da unidade curricular de Inteligência Artificial Aplicada a Jogos, aplicando conceitos de programação e interatividade.
 
-Conceito do Jogo:
-
-  O jogo será um race game diferenciado, onde os "corredores" são bolas que competem entre si para alcançar a linha de chegada. Inspirado em elementos de competição e classificação, o jogo permite que os jogadores interajam uns com os outros enquanto competem para alcançar o menor tempo em várias pistas.
 
 História do Jogo:
 
@@ -18,26 +15,28 @@ Em um flash de luz, os exploradores são transformados em bolas de cristal. A vo
   
   O principal objetivo do jogo é simples e direto: ser o primeiro a chegar à meta. Os jogadores irão competir em tempo real e também tentar alcançar o melhor tempo para se destacarem na tabela de classificação global. Esta estrutura incentiva duas formas de desafio: vencer os outros jogadores em partidas ao vivo e melhorar continuamente o tempo de conclusão das pistas, visando posições mais altas no ranking.
   
-Descrição Geral e Elementos do Jogo:
+  Máquina de Estados Finita (FSM): 
 
-  O jogo será renderizado em 3D, proporcionando uma perspetiva vista de cima com um ângulo de 75º. Esta visualização favorece a visualização dos obstáculos e das pistas enquanto permite acompanhar o movimento e interação entre as bolas.
-  Existem diferentes pistas (1/3 variantes), cada uma com desafios e obstáculos únicos, e cada uma conta com uma classificação global própria, incentivando os jogadores a se especializarem e superarem tempos em diferentes pistas.
+  Este script implementa uma máquina de estados simples para gerenciar o comportamento de uma IA de personagem. Uma máquina de estados é um modelo computacional que representa os diferentes estados que uma entidade pode assumir e as transições entre esses estados com base em condições específicas. Neste caso, a IA pode alternar entre diferentes estados, como patrulhar, rolar, pular e outros.
 
-  Personagens e Personalização:
-  
-As "bolas" serão as personagens principais do jogo, e o jogador poderá personalizar a aparência da sua bola, adicionando expressões faciais, como caras zangadas, chorosas ou de desagrado. Essa personalização traz uma camada extra de diversão e individualidade, possibilitando que cada jogador crie uma personagem que reflita seu estilo ou humor.
 
-  Power-ups e Elementos de Interatividade:
-  
-  Para tornar o jogo mais dinâmico e divertido, estarão disponíveis power-ups que os jogadores podem utilizar estrategicamente durante as corridas. Entre as opções estão:
-•	Cascas de banana: que podem ser deixadas pelo caminho para escorregar os oponentes.
-•	Barreiras/Balizas: que servem como bloqueios temporários, dificultando a passagem dos concorrentes.
-Esses elementos introduzem mais estratégia no jogo, pois os jogadores precisam decidir o momento ideal para usar esses power-ups e quais os melhores locais para aplicá-los durante a corrida.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f0fa1010-6635-4e24-8fbe-ae77aadc2edb" alt="Descrição da imagem">
+</p>
 
-Componentes Multijogador e Classificação:
 
-  O jogo terá um sistema de competição em rede, permitindo que múltiplos jogadores entrem numa mesma corrida e compitam em tempo real. Além disso, a tabela de classificação global oferece um incentivo adicional para a competitividade, uma vez que permite que os jogadores acompanhem o seu progresso e comparem o desempenho com outros jogadores de todo o mundo.
 
+  Enumeração dos Estados
+
+Os possíveis estados que um personagem pode assumir são os seguintes:
+
+  Parado (Idle): O personagem está em repouso, aguardando entrada ou ação.
+  Rolando (Roll): O personagem inicia um movimento de rolar.
+  Pulando (Jump): O personagem executa um salto.
+  Sprint_Roll (Corrida com Rolar): O personagem realiza um movimento de rolamento mais rapido.
+  Sprint_Roll_Back (Rolamento para trás): O personagem realiza um rolamento mais rápido para trás.
+
+   
 Conclusão:
 
   O jogo combina elementos de corrida com interação multijogador, power-ups divertidos e personalização das personagens. Este relatório documenta os principais aspetos de design e funcionalidades, e pretende servir de base para futuras melhorias e expansões no desenvolvimento deste jogo.
