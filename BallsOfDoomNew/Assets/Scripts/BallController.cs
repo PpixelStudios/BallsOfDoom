@@ -151,4 +151,18 @@ public class BallController : MonoBehaviour
         // Verifica se há colisão com o chão usando um raio abaixo da bola
         return Physics.Raycast(transform.position, Vector3.down, 1.1f);
     }
+
+    // Adicionado: Método para obter posição do jogador
+    public Vector3 GetPosition()
+    {
+        return transform.position; // Retorna a posição da bola do jogador.
+    }
+
+    // Adicionado: Método para calcular distância relativa ao jogador
+    public float GetRelativeDistance(Vector3 botPosition)
+    {
+        Vector3 directionToBot = botPosition - transform.position;
+        float forwardDot = Vector3.Dot(directionToBot.normalized, cameraTransform.forward);
+        return directionToBot.magnitude * Mathf.Sign(forwardDot);
+    }
 }

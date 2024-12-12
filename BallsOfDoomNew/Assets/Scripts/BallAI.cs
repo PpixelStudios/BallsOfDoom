@@ -3,9 +3,12 @@ using UnityEngine;
 public class BallAI : MonoBehaviour
 {
     public Transform[] waypoints; // Lista de waypoints que a IA irá seguir.
-    public float moveSpeed = 5.0f; // Velocidade de movimento.
+    public float baseSpeed = 5.0f; // Velocidade base de movimento.
+    public float maxSpeed = 10.0f; // Velocidade máxima de movimento.
     public float rotationSpeed = 5.0f; // Velocidade de rotação.
     public float waypointThreshold = 1.0f; // Distância mínima para considerar que chegou ao waypoint.
+    public float adaptiveThreshold = 20.0f; // Distância para começar o ajuste adaptativo.
+    public BallController player; // Referência à bola do jogador.
 
     private int currentWaypointIndex = 0; // Índice do waypoint atual.
     private State currentState; // Estado atual da máquina de estados.
@@ -22,6 +25,11 @@ public class BallAI : MonoBehaviour
         {
             Debug.LogError("Waypoints não configurados para a IA.");
             return;
+        }
+
+        if (player == null)
+        {
+            Debug.LogError("Player (BallController) não atribuído!");
         }
 
         currentState = State.MovingToWaypoint; // Estado inicial.
@@ -44,28 +52,37 @@ public class BallAI : MonoBehaviour
     {
         if (currentWaypointIndex >= waypoints.Length)
         {
-            // Se todos os waypoints foram alcançados, muda para o estado de chegada.
             currentState = State.AtFinishLine;
             return;
         }
 
-        // Obter o waypoint atual.
         Transform targetWaypoint = waypoints[currentWaypointIndex];
-
-        // Calcular a direção até o waypoint.
         Vector3 direction = (targetWaypoint.position - transform.position).normalized;
 
-        // Mover a bola em direção ao waypoint.
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        float currentSpeed = baseSpeed;
 
-        // Rotacionar suavemente na direção do waypoint.
+        if (player != null)
+        {
+            float relativeDistance = player.GetRelativeDistance(transform.position);
+
+            if (relativeDistance < -adaptiveThreshold)
+            {
+                currentSpeed = Mathf.Lerp(baseSpeed, maxSpeed, -relativeDistance / adaptiveThreshold);
+            }
+            else if (relativeDistance > adaptiveThreshold)
+            {
+                currentSpeed = Mathf.Lerp(baseSpeed, 0, relativeDistance / adaptiveThreshold);
+            }
+        }
+
+        transform.position += direction * currentSpeed * Time.deltaTime;
+
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        // Verificar se o waypoint foi alcançado.
         if (Vector3.Distance(transform.position, targetWaypoint.position) <= waypointThreshold)
         {
-            currentWaypointIndex++; // Avançar para o próximo waypoint.
+            currentWaypointIndex++;
         }
     }
 }
