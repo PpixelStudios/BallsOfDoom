@@ -24,8 +24,6 @@ Em um flash de luz, os exploradores são transformados em bolas de cristal. A vo
   <img src="https://github.com/user-attachments/assets/f0fa1010-6635-4e24-8fbe-ae77aadc2edb" alt="Descrição da imagem">
 </p>
 
-
-
   Enumeração dos Estados
 
 Os possíveis estados que um personagem pode assumir são os seguintes:
@@ -36,7 +34,42 @@ Os possíveis estados que um personagem pode assumir são os seguintes:
   Sprint_Roll (Corrida com Rolar): O personagem realiza um movimento de rolamento mais rapido.
   Sprint_Roll_Back (Rolamento para trás): O personagem realiza um rolamento mais rápido para trás.
 
-   
+
+A ideia da IA Competitiva Dinâmica é criar uma experiência de jogo mais envolvente e desafiadora ao adaptar o comportamento dos bots em tempo real com base no desempenho do jogador. Esse método torna os bots "inteligentes", ajustando suas ações para criar uma competição equilibrada ou até imprevisível. Vamos detalhar as duas abordagens mencionadas:
+
+1. Desempenho Adaptativo
+Este componente avalia a posição e o progresso do jogador em relação aos bots e faz ajustes ao comportamento dos bots:
+
+Como Funciona
+
+Monitoramento do Desempenho:
+
+
+![Captura de ecrã 2024-12-12 193827](https://github.com/user-attachments/assets/fa966edc-16c7-49cd-91a1-cf8ba99ca509)
+
+
+Verifica a distância entre cada bot e o jogador.
+Compara posições relativas em relação à linha de chegada (checkpoint ou progressão total no percurso).
+Ajuste de Velocidade:
+
+![Captura de ecrã 2024-12-12 193720](https://github.com/user-attachments/assets/71e899f1-ff01-4a1f-93b8-15ffb227505b)
+
+
+Se o jogador estiver muito à frente:
+Bots recebem um boost temporário na velocidade ou escolhem caminhos mais diretos (atalhos) para alcançá-lo.
+Os bots podem ativar estratégias mais agressivas (por exemplo, tentar bloquear o jogador).
+Se o jogador estiver muito atrás:
+Bots reduzem sua velocidade ligeiramente para evitar que o jogador perca o interesse no jogo.
+
+Gerenciamento de Dificuldade:
+
+
+![Captura de ecrã 2024-12-12 194006](https://github.com/user-attachments/assets/15df2c66-3719-473e-9a2f-e20ac0612c07)
+
+Adicione limites para evitar que bots fiquem muito rápidos ou lentos.
+Use uma "zona de conforto" onde, se o jogador estiver em uma faixa intermediária, os bots mantenham o comportamento normal.
+
+
 Conclusão:
 
   O jogo combina elementos de corrida com interação multijogador, power-ups divertidos e personalização das personagens. Este relatório documenta os principais aspetos de design e funcionalidades, e pretende servir de base para futuras melhorias e expansões no desenvolvimento deste jogo.
