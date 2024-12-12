@@ -31,7 +31,7 @@ Em um flash de luz, os exploradores são transformados em bolas de cristal. A vo
 Os possíveis estados que um personagem pode assumir são os seguintes:
 
   Parado (Idle): O personagem está em repouso, aguardando entrada ou ação.
-  Rolando (Roll): O personagem realiza um movimento de rolar para esquivar ou deslocar-se rapidamente.
+  Rolando (Roll): O personagem inicia um movimento de rolar.
   Pulando (Jump): O personagem executa um salto.
   Sprint_Roll (Corrida com Rolar): O personagem realiza um movimento de rolamento mais rapido.
   Sprint_Roll_Back (Rolamento para trás): O personagem realiza um rolamento mais rápido para trás.
