@@ -20,7 +20,10 @@ Em um flash de luz, os exploradores são transformados em bolas de cristal. A vo
   Este script implementa uma máquina de estados simples para gerenciar o comportamento de uma IA de personagem. Uma máquina de estados é um modelo computacional que representa os diferentes estados que uma entidade pode assumir e as transições entre esses estados com base em condições específicas. Neste caso, a IA pode alternar entre diferentes estados, como patrulhar, rolar, pular e outros.
 
 
-![Captura de ecrã 2024-12-12 133432](https://github.com/user-attachments/assets/f0fa1010-6635-4e24-8fbe-ae77aadc2edb)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f0fa1010-6635-4e24-8fbe-ae77aadc2edb" alt="Descrição da imagem">
+</p>
+
 
 
   Enumeração dos Estados
