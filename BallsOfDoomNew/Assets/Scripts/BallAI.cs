@@ -4,8 +4,8 @@ using System.Collections;
 public class BallAI : MonoBehaviour
 {
     public Transform[] waypoints; // Lista de waypoints que a IA seguirá.
-    public float moveSpeed = 5.0f; // Velocidade de movimento.
-    public float rotationSpeed = 5.0f; // Velocidade de rotação.
+    public float moveSpeed = 5.0f; 
+    public float rotationSpeed = 5.0f; 
     public float waypointThreshold = 1.0f; // Distância mínima para considerar que chegou ao waypoint.
     public float obstacleDetectionRange = 3.0f; // Alcance para detectar obstáculos (raycast central).
     public float sideDetectionRange = 5.0f; // Alcance para os raycasts laterais (maior que o central).
@@ -30,7 +30,7 @@ public class BallAI : MonoBehaviour
     {
         if (waypoints.Length == 0)
         {
-            Debug.LogError("Waypoints não configurados para a IA.");
+            //Debug.LogError("Waypoints não configurados para a IA.");
             return;
         }
 
@@ -87,7 +87,7 @@ public class BallAI : MonoBehaviour
 
             if (!IsObstacleDetected())
             {
-                Debug.Log("Caminho livre! Voltando para o estado MovingToWaypoint.");
+                Debug.Log("Caminho livre! Voltar para o estado MovingToWaypoint.");
                 currentState = State.MovingToWaypoint;
                 return;
             }
@@ -155,7 +155,7 @@ public class BallAI : MonoBehaviour
         // Verificar se o caminho está livre após o movimento lateral.
         if (!IsObstacleDetected())
         {
-            Debug.Log("Caminho livre após o desvio lateral. Voltando à rotação inicial.");
+            //Debug.Log("Caminho livre. voltar para rotação inicial.");
             transform.rotation = initialRotation;
             currentState = State.MovingToWaypoint;
         }
