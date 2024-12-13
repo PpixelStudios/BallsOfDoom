@@ -5,7 +5,9 @@ public class BallAI : MonoBehaviour
 {
     public Transform[] waypoints; // Lista de waypoints que a IA seguirá.
     public float moveSpeed = 5.0f; 
-    public float rotationSpeed = 5.0f; 
+    public float rotationSpeed = 5.0f;
+    public float baseSpeed = 5.0f; // Velocidade base de movimento.
+    public float maxSpeed = 10.0f; // Velocidade mxima de movimento.
     public float waypointThreshold = 1.0f; // Distância mínima para considerar que chegou ao waypoint.
     public float obstacleDetectionRange = 3.0f; // Alcance para detectar obstáculos (raycast central).
     public float sideDetectionRange = 5.0f; // Alcance para os raycasts laterais (maior que o central).
@@ -14,6 +16,8 @@ public class BallAI : MonoBehaviour
     public float checkInterval = 0.2f; // Intervalo entre verificações de obstáculos no estado de desvio.
     public float sideStepTime = 1.0f; // Tempo para mover lateralmente antes de verificar o caminho.
     public float sideRaycastAngle = 45f; // O ângulo dos raycasts laterais em relação ao raycast central.
+    public float adaptiveThreshold = 20.0f; // Distncia para comear o ajuste adaptativo.
+    public BallController player; // Referncia  bola do jogador.
 
     private int currentWaypointIndex = 0; // Índice do waypoint atual.
     private State currentState; // Estado atual da IA.
@@ -69,6 +73,24 @@ public class BallAI : MonoBehaviour
             currentState = State.AvoidingObstacle;
             return;
         }
+
+        float currentSpeed = baseSpeed;
+
+        if (player != null)
+        {
+            float relativeDistance = player.GetRelativeDistance(transform.position);
+
+            if (relativeDistance < -adaptiveThreshold)
+            {
+                currentSpeed = Mathf.Lerp(baseSpeed, maxSpeed, -relativeDistance / adaptiveThreshold);
+            }
+            else if (relativeDistance > adaptiveThreshold)
+            {
+                currentSpeed = Mathf.Lerp(baseSpeed, 0, relativeDistance / adaptiveThreshold);
+            }
+        }
+
+        transform.position += direction * currentSpeed * Time.deltaTime;
 
         // Mover na direção do waypoint.
         MoveInDirection(direction);

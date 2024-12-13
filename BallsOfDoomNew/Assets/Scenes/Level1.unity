@@ -4233,6 +4233,8 @@ MonoBehaviour:
   - {fileID: 2035306668}
   moveSpeed: 8
   rotationSpeed: 22
+  baseSpeed: 5
+  maxSpeed: 10
   waypointThreshold: 1
   obstacleDetectionRange: 3
   sideDetectionRange: 5
@@ -4243,6 +4245,8 @@ MonoBehaviour:
   checkInterval: 1
   sideStepTime: 0.5
   sideRaycastAngle: 45
+  adaptiveThreshold: 20
+  player: {fileID: 850171695}
 --- !u!1 &527221076
 GameObject:
   m_ObjectHideFlags: 0
@@ -7035,7 +7039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e215adf7365ac4f8709b4adc1e287a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   sprintMultiplier: 1.5
   jumpForce: 5
   cameraTransform: {fileID: 0}
@@ -8663,6 +8667,8 @@ MonoBehaviour:
   - {fileID: 500944051}
   moveSpeed: 7
   rotationSpeed: 5
+  baseSpeed: 5
+  maxSpeed: 10
   waypointThreshold: 1
   obstacleDetectionRange: 3
   sideDetectionRange: 5
@@ -8673,6 +8679,8 @@ MonoBehaviour:
   checkInterval: 0.2
   sideStepTime: 1
   sideRaycastAngle: 45
+  adaptiveThreshold: 20
+  player: {fileID: 0}
 --- !u!1001 &992344548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12093,6 +12101,8 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 5
   rotationSpeed: 5
+  baseSpeed: 5
+  maxSpeed: 10
   waypointThreshold: 1
   obstacleDetectionRange: 3
   sideDetectionRange: 5
@@ -12103,6 +12113,8 @@ MonoBehaviour:
   checkInterval: 0.2
   sideStepTime: 1
   sideRaycastAngle: 45
+  adaptiveThreshold: 20
+  player: {fileID: 0}
 --- !u!1 &1414544902
 GameObject:
   m_ObjectHideFlags: 0
