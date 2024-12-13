@@ -15,7 +15,7 @@ Em um flash de luz, os exploradores são transformados em bolas de cristal. A vo
   
   O principal objetivo do jogo é simples e direto: ser o primeiro a chegar à meta. Os jogadores irão competir em tempo real e também tentar alcançar o melhor tempo para se destacarem na tabela de classificação global. Esta estrutura incentiva duas formas de desafio: vencer os outros jogadores em partidas ao vivo e melhorar continuamente o tempo de conclusão das pistas, visando posições mais altas no ranking.
   
-  Máquina de Estados Finita (FSM): 
+  1. Máquina de Estados Finita (FSM): 
 
   Este script implementa uma máquina de estados simples para gerenciar o comportamento de uma IA de personagem. Uma máquina de estados é um modelo computacional que representa os diferentes estados que uma entidade pode assumir e as transições entre esses estados com base em condições específicas. Neste caso, a IA pode alternar entre diferentes estados, como patrulhar, rolar, pular e outros.
 
@@ -37,7 +37,8 @@ Os possíveis estados que um personagem pode assumir são os seguintes:
 
 A ideia da IA Competitiva Dinâmica é criar uma experiência de jogo mais envolvente e desafiadora ao adaptar o comportamento dos bots em tempo real com base no desempenho do jogador. Esse método torna os bots "inteligentes", ajustando suas ações para criar uma competição equilibrada ou até imprevisível. Vamos detalhar as duas abordagens mencionadas:
 
-1. Desempenho Adaptativo
+2. Desempenho Adaptativo
+   
 Este componente avalia a posição e o progresso do jogador em relação aos bots e faz ajustes ao comportamento dos bots:
 
 Como Funciona
