@@ -53,6 +53,7 @@ Verifica a distância entre cada bot e o jogador.
 Compara posições relativas em relação à linha de chegada (checkpoint ou progressão total no percurso).
 Ajuste de Velocidade:
 
+
 ![Captura de ecrã 2024-12-12 193720](https://github.com/user-attachments/assets/71e899f1-ff01-4a1f-93b8-15ffb227505b)
 
 
@@ -62,15 +63,59 @@ Os bots podem ativar estratégias mais agressivas (por exemplo, tentar bloquear 
 Se o jogador estiver muito atrás:
 Bots reduzem sua velocidade ligeiramente para evitar que o jogador perca o interesse no jogo.
 
+
 Gerenciamento de Dificuldade:
 
 
 ![Captura de ecrã 2024-12-12 194006](https://github.com/user-attachments/assets/15df2c66-3719-473e-9a2f-e20ac0612c07)
 
+
 Adicione limites para evitar que bots fiquem muito rápidos ou lentos.
 Use uma "zona de conforto" onde, se o jogador estiver em uma faixa intermediária, os bots mantenham o comportamento normal.
 
 
+3.Navegação com Waypoints
+
+
+A IA calcula a direção para o próximo waypoint utilizando a diferença entre a posição atual do bot e a posição do waypoint alvo. Essa direção é normalizada para garantir que o movimento seja proporcional, sem afetar a velocidade.
+O método MoveInDirection(direction) é chamado para movimentar o bot na direção calculada.
+
+
+Chegada ao Próximo Waypoint
+
+
+A distância entre o bot e o waypoint alvo é verificada utilizando o método Vector3.Distance. Quando a distância é menor ou igual a um valor limiar (waypointThreshold), o bot avança para o próximo waypoint incrementando o índice (currentWaypointIndex).
+
+
+![Captura_de_ecra_2024-12-13_205514](https://github.com/user-attachments/assets/3f45285a-367c-4e77-ace7-3bdef6b833f6)
+
+
+Verificação de Fim da Lista de Waypoints
+
+
+Se o índice atual do waypoint (currentWaypointIndex) ultrapassar o número total de waypoints, o método detecta que o último ponto foi alcançado e interrompe o processo de movimentação.
+
+
+Detecção de Obstáculos
+
+
+Antes de prosseguir para o próximo waypoint, o método verifica se há obstáculos nas proximidades utilizando IsObstacleDetected().
+Caso um obstáculo seja detectado, o estado do bot é alterado para State.AvoidingObstacle, permitindo que ele mude seu comportamento para contornar ou lidar com o obstáculo.
+
+
+![Captura_de_ecra_2024-12-13_205420](https://github.com/user-attachments/assets/174e68ff-5f62-4349-a17d-8ff126668f10)
+
+
+Movimentação em Direção aos Waypoints
+
+
+A IA calcula a direção para o próximo waypoint utilizando a diferença entre a posição atual do bot e a posição do waypoint alvo. Essa direção é normalizada para garantir que o movimento seja proporcional, sem afetar a velocidade. O método MoveInDirection(direction) é responsável por mover o bot nessa direção e ajustar sua rotação para que continue olhando na direção de movimento.
+
+
+![Captura_de_ecra_2024-12-13_210944](https://github.com/user-attachments/assets/af4effb4-cad6-4f9a-ad1f-df3161c031ed)
+
+
 Conclusão:
+
 
   O jogo combina elementos de corrida com interação multijogador, power-ups divertidos e personalização das personagens. Este relatório documenta os principais aspetos de design e funcionalidades, e pretende servir de base para futuras melhorias e expansões no desenvolvimento deste jogo.
