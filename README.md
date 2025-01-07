@@ -2,7 +2,7 @@
 
 Introdução:
 
-  O projeto consiste no desenvolvimento de um jogo de corrida, em que o objetivo principal é proporcionar aos jogadores uma experiência divertida e competitiva. Este jogo está a ser desenvolvido no âmbito da unidade curricular de Inteligência Artificial Aplicada a Jogos, aplicando conceitos de programação e interatividade.
+  O projeto consiste no desenvolvimento de um jogo de corrida, em que o objetivo principal é proporcionar aos jogadores uma experiência divertida e competitiva. 
 
 
 História do Jogo:
@@ -118,4 +118,4 @@ A IA calcula a direção para o próximo waypoint utilizando a diferença entre 
 Conclusão:
 
 
-  O jogo combina elementos de corrida com interação multijogador, power-ups divertidos e personalização das personagens. Este relatório documenta os principais aspetos de design e funcionalidades, e pretende servir de base para futuras melhorias e expansões no desenvolvimento deste jogo.
+  O jogo combina elementos de corrida com interação multijogador. Este relatório documenta os principais aspetos de design e funcionalidades, e pretende servir de base para futuras melhorias e expansões no desenvolvimento deste jogo.
