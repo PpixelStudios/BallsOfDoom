@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -20,8 +21,11 @@ public class BallController : MonoBehaviour
     private float lastBackwardPressTime = 0f; // Tempo do último pressionamento para trás
     private float doubleClickThreshold = 0.3f; // Tempo máximo entre cliques para detecção de double-click
 
+    private PhotonView photonView;
+
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody>();
 
         // Localizar a câmera automaticamente se não estiver atribuída
@@ -44,6 +48,8 @@ public class BallController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!photonView.IsMine) return;
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
