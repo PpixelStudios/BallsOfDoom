@@ -10,13 +10,13 @@ public class FinishLine : MonoBehaviour
         {
             raceFinished = true;
             // Determina o índice da bola a partir do nome do objeto.
-            int ballIndex = GetBallIndex(other.gameObject.name);
+            //int ballIndex = GetBallIndex(other.gameObject.name);
 
             // Atualiza a pontuação da bola vencedora.
-            GameManager.Instance.AddScore(ballIndex, 10);
+            //GameManager.Instance.AddScore(ballIndex, 10);
 
             // Transição para a próxima sala (nome da próxima cena).
-            GameManager.Instance.LoadNextLevel("Level2");
+            GameManager.Instance.LoadNextLevel("W");
 
             Debug.Log($"{other.name} ganhou a corrida!");
         }
